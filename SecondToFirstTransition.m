@@ -71,16 +71,4 @@
 }
 
 
-//-(void)animationEnded:(BOOL)transitionCompleted
-//{
-//    if(transitionCompleted){
-//        
-//        SecondViewController *fromVC = (SecondViewController *)[self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-//        UITableViewCell *cell = [fromVC.tableView cellForRowAtIndexPath:[fromVC.tableView indexPathForSelectedRow]];
-//        UIImageView *imageViewOnCell = (UIImageView *)[cell viewWithTag:100];
-//        imageViewOnCell.hidden = NO;
-//        
-//    }
-//}
-
 @end

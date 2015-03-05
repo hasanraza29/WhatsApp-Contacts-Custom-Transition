@@ -27,7 +27,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sYK-1q-Qen" id="cGj-Kd-6PC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10885617_905000342866412_7746445199428909948_n.jpg" id="rgC-I8-A9i">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.png" id="rgC-I8-A9i">
                                                     <rect key="frame" x="22" y="7" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -105,7 +105,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="10885617_905000342866412_7746445199428909948_n.jpg" width="914" height="914"/>
+        <image name="person.png" width="180" height="220"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
