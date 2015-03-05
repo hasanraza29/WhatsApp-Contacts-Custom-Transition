@@ -14,12 +14,10 @@
 		7491F54F1AA833B70014A09E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7491F54E1AA833B70014A09E /* Images.xcassets */; };
 		7491F5521AA833B70014A09E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7491F5501AA833B70014A09E /* LaunchScreen.xib */; };
 		7491F55E1AA833B70014A09E /* WhatsApp_Contacts_Custom_TransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491F55D1AA833B70014A09E /* WhatsApp_Contacts_Custom_TransitionTests.m */; };
-		7491F5681AA834410014A09E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7491F5671AA834410014A09E /* logo.png */; };
 		7491F56B1AA835420014A09E /* FirstToSecondTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491F56A1AA835420014A09E /* FirstToSecondTransition.m */; };
 		7491F56E1AA835A60014A09E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491F56D1AA835A60014A09E /* SecondViewController.m */; };
-		7491F5701AA83A4F0014A09E /* DP_Upgrade_Key.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7491F56F1AA83A4F0014A09E /* DP_Upgrade_Key.jpg */; };
-		7491F5721AA83A6C0014A09E /* 10885617_905000342866412_7746445199428909948_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7491F5711AA83A6C0014A09E /* 10885617_905000342866412_7746445199428909948_n.jpg */; };
 		7491F5751AA842530014A09E /* SecondToFirstTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491F5741AA842530014A09E /* SecondToFirstTransition.m */; };
+		7491F5821AA85FEC0014A09E /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 7491F5811AA85FEC0014A09E /* person.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,15 +44,13 @@
 		7491F5571AA833B70014A09E /* WhatsApp Contacts Custom TransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WhatsApp Contacts Custom TransitionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7491F55C1AA833B70014A09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7491F55D1AA833B70014A09E /* WhatsApp_Contacts_Custom_TransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatsApp_Contacts_Custom_TransitionTests.m; sourceTree = "<group>"; };
-		7491F5671AA834410014A09E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		7491F5691AA835420014A09E /* FirstToSecondTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstToSecondTransition.h; sourceTree = "<group>"; };
 		7491F56A1AA835420014A09E /* FirstToSecondTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstToSecondTransition.m; sourceTree = "<group>"; };
 		7491F56C1AA835A60014A09E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		7491F56D1AA835A60014A09E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		7491F56F1AA83A4F0014A09E /* DP_Upgrade_Key.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DP_Upgrade_Key.jpg; sourceTree = "<group>"; };
-		7491F5711AA83A6C0014A09E /* 10885617_905000342866412_7746445199428909948_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10885617_905000342866412_7746445199428909948_n.jpg; sourceTree = "<group>"; };
 		7491F5731AA842530014A09E /* SecondToFirstTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondToFirstTransition.h; sourceTree = "<group>"; };
 		7491F5741AA842530014A09E /* SecondToFirstTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondToFirstTransition.m; sourceTree = "<group>"; };
+		7491F5811AA85FEC0014A09E /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,15 +74,9 @@
 		7491F5351AA833B70014A09E = {
 			isa = PBXGroup;
 			children = (
-				7491F5731AA842530014A09E /* SecondToFirstTransition.h */,
-				7491F5741AA842530014A09E /* SecondToFirstTransition.m */,
-				7491F5711AA83A6C0014A09E /* 10885617_905000342866412_7746445199428909948_n.jpg */,
-				7491F56F1AA83A4F0014A09E /* DP_Upgrade_Key.jpg */,
-				7491F56C1AA835A60014A09E /* SecondViewController.h */,
-				7491F56D1AA835A60014A09E /* SecondViewController.m */,
-				7491F5691AA835420014A09E /* FirstToSecondTransition.h */,
-				7491F56A1AA835420014A09E /* FirstToSecondTransition.m */,
-				7491F5671AA834410014A09E /* logo.png */,
+				7491F5811AA85FEC0014A09E /* person.png */,
+				7491F57E1AA85FA50014A09E /* View Controllers */,
+				7491F5831AA85FFB0014A09E /* Transitions */,
 				7491F5401AA833B70014A09E /* WhatsApp Contacts Custom Transition */,
 				7491F55A1AA833B70014A09E /* WhatsApp Contacts Custom TransitionTests */,
 				7491F53F1AA833B70014A09E /* Products */,
@@ -107,8 +97,6 @@
 			children = (
 				7491F5451AA833B70014A09E /* AppDelegate.h */,
 				7491F5461AA833B70014A09E /* AppDelegate.m */,
-				7491F5481AA833B70014A09E /* ViewController.h */,
-				7491F5491AA833B70014A09E /* ViewController.m */,
 				7491F54B1AA833B70014A09E /* Main.storyboard */,
 				7491F54E1AA833B70014A09E /* Images.xcassets */,
 				7491F5501AA833B70014A09E /* LaunchScreen.xib */,
@@ -141,6 +129,61 @@
 				7491F55C1AA833B70014A09E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7491F57E1AA85FA50014A09E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7491F5801AA85FC30014A09E /* First VC */,
+				7491F57F1AA85FAE0014A09E /* Second VC */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7491F57F1AA85FAE0014A09E /* Second VC */ = {
+			isa = PBXGroup;
+			children = (
+				7491F56C1AA835A60014A09E /* SecondViewController.h */,
+				7491F56D1AA835A60014A09E /* SecondViewController.m */,
+			);
+			name = "Second VC";
+			sourceTree = "<group>";
+		};
+		7491F5801AA85FC30014A09E /* First VC */ = {
+			isa = PBXGroup;
+			children = (
+				7491F5481AA833B70014A09E /* ViewController.h */,
+				7491F5491AA833B70014A09E /* ViewController.m */,
+			);
+			name = "First VC";
+			path = "WhatsApp Contacts Custom Transition";
+			sourceTree = "<group>";
+		};
+		7491F5831AA85FFB0014A09E /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				7491F5841AA860030014A09E /* Push */,
+				7491F5851AA860090014A09E /* Pop */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		7491F5841AA860030014A09E /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				7491F5691AA835420014A09E /* FirstToSecondTransition.h */,
+				7491F56A1AA835420014A09E /* FirstToSecondTransition.m */,
+			);
+			name = Push;
+			sourceTree = "<group>";
+		};
+		7491F5851AA860090014A09E /* Pop */ = {
+			isa = PBXGroup;
+			children = (
+				7491F5731AA842530014A09E /* SecondToFirstTransition.h */,
+				7491F5741AA842530014A09E /* SecondToFirstTransition.m */,
+			);
+			name = Pop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,12 +266,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7491F5681AA834410014A09E /* logo.png in Resources */,
 				7491F54D1AA833B70014A09E /* Main.storyboard in Resources */,
 				7491F5521AA833B70014A09E /* LaunchScreen.xib in Resources */,
-				7491F5721AA83A6C0014A09E /* 10885617_905000342866412_7746445199428909948_n.jpg in Resources */,
-				7491F5701AA83A4F0014A09E /* DP_Upgrade_Key.jpg in Resources */,
 				7491F54F1AA833B70014A09E /* Images.xcassets in Resources */,
+				7491F5821AA85FEC0014A09E /* person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +483,7 @@
 				7491F5631AA833B70014A09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7491F5641AA833B70014A09E /* Build configuration list for PBXNativeTarget "WhatsApp Contacts Custom TransitionTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +492,7 @@
 				7491F5661AA833B70014A09E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
