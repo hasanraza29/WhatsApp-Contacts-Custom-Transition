@@ -11,7 +11,9 @@
 #import "ViewController.h"
 
 @interface SecondViewController ()<UINavigationControllerDelegate>
-
+{
+    SecondToFirstTransition *vc;
+}
 @end
 
 @implementation SecondViewController
@@ -21,6 +23,8 @@
     
     self.imageView.layer.cornerRadius = self.imageView.frame.size.width * 0.45;
     self.imageView.clipsToBounds = YES;
+    vc = [[SecondToFirstTransition alloc]initWithNavigationController:self.navigationController];
+    vc.viewForInteraction = self.view;
 
 }
 
@@ -44,7 +48,8 @@
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
     if(fromVC == self && [toVC isKindOfClass:[ViewController class]]){
-        return [[SecondToFirstTransition alloc]init];
+        
+        return vc;
     }
     return nil;
 }

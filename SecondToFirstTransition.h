@@ -10,5 +10,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SecondToFirstTransition : NSObject<UIViewControllerAnimatedTransitioning>
+@property (nonatomic, assign, getter = isInteractive) BOOL interactive;
+@property (nonatomic, assign) UINavigationController *navigationController;
+@property (nonatomic, strong) UIView *viewForInteraction;
 
+-(instancetype)initWithNavigationController:(UINavigationController *)controller;
+-(void)handlePinch:(UIPinchGestureRecognizer *)pinch;
 @end

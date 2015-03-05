@@ -12,10 +12,40 @@
 
 
 @interface SecondToFirstTransition ()
+{
+    UIView *_transitioningView;
+    UIPinchGestureRecognizer *_pinchRecognizer;
+    CGFloat _startScale, _completionSpeed;
+}
+
+-(void)updateWithPercent:(CGFloat)percent;
+-(void)end:(BOOL)cancelled;
+
 @property (nonatomic, strong) id<UIViewControllerContextTransitioning> transitionContext;
+
 @end
 
 @implementation SecondToFirstTransition
+
+@synthesize viewForInteraction = _viewForInteraction;
+
+-(instancetype)initWithNavigationController:(UINavigationController *)controller {
+    self = [super init];
+    if (self) {
+        self.navigationController = controller;
+        _completionSpeed = 0.2;
+        
+        _pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    }
+    return self;
+}
+
+-(void)setViewForInteraction:(UIView *)viewForInteraction {
+    if (_viewForInteraction && [_viewForInteraction.gestureRecognizers containsObject:_pinchRecognizer]) [_viewForInteraction removeGestureRecognizer:_pinchRecognizer];
+    
+    _viewForInteraction = viewForInteraction;
+    [_viewForInteraction addGestureRecognizer:_pinchRecognizer];
+}
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
@@ -69,6 +99,87 @@
 {
     return 0.4;
 }
+
+-(void)animationEnded:(BOOL)transitionCompleted {
+    self.interactive = NO;
+}
+
+
+#pragma mark - Interactive Transitioning
+
+-(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    //Maintain reference to context
+    self.transitionContext = transitionContext;
+    
+    //Get references to view hierarchy
+    UIView *containerView = [transitionContext containerView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    //Insert 'to' view into hierarchy
+    toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
+    [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
+    
+    //Save reference for view to be scaled
+    _transitioningView = fromViewController.view;
+}
+
+-(void)updateWithPercent:(CGFloat)percent {
+    CGFloat scale = fabsf(percent-1.0);
+    _transitioningView.transform = CGAffineTransformMakeScale(scale, scale);
+    [self.transitionContext updateInteractiveTransition:percent];
+}
+
+-(void)end:(BOOL)cancelled {
+    if (cancelled) {
+        [UIView animateWithDuration:_completionSpeed animations:^{
+            _transitioningView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        } completion:^(BOOL finished) {
+            [self.transitionContext cancelInteractiveTransition];
+            [self.transitionContext completeTransition:NO];
+        }];
+    } else {
+        [UIView animateWithDuration:_completionSpeed animations:^{
+            _transitioningView.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        } completion:^(BOOL finished) {
+            [self.transitionContext finishInteractiveTransition];
+            [self.transitionContext completeTransition:YES];
+        }];
+    }
+}
+
+-(void)handlePinch:(UIPinchGestureRecognizer *)pinch {
+    CGFloat scale = pinch.scale;
+    switch (pinch.state) {
+        case UIGestureRecognizerStateBegan:
+            _startScale = scale;
+            self.interactive = YES;
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case UIGestureRecognizerStateChanged: {
+            CGFloat percent = (1.0 - scale/_startScale);
+            [self updateWithPercent:(percent < 0.0) ? 0.0 : percent];
+            break;
+        }
+        case UIGestureRecognizerStateEnded: {
+            CGFloat percent = (1.0 - scale/_startScale);
+            BOOL cancelled = ([pinch velocity] < 5.0 && percent <= 0.3);
+            [self end:cancelled];
+            break;
+        }
+        case UIGestureRecognizerStateCancelled: {
+            CGFloat percent = (1.0 - scale/_startScale);
+            BOOL cancelled = ([pinch velocity] < 5.0 && percent <= 0.3);
+            [self end:cancelled];
+            break;
+        }
+        case UIGestureRecognizerStatePossible:
+            break;
+        case UIGestureRecognizerStateFailed:
+            break;
+    }
+}
+
 
 
 @end
